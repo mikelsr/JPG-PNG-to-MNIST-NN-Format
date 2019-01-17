@@ -9,7 +9,7 @@ Use the following lines to install imagemagick and the python-imaging-library (P
 ```bash
 sudo apt-get update
 sudo apt-get install imagemagick php5-imagick
-pip install pillow
+pip install pillow gzip numpy imageio
 ```
 
 # Transform your images into an MNIST NN Ready Binary:
