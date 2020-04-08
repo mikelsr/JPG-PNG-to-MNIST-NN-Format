@@ -18,7 +18,13 @@ def write_imagedata(imagedata, outputfile):
 		f.write(imagedata.tobytes())
 
 # Load from and save to
-Names = [['./training-images','./custom/train'], ['./test-images','./custom/test']]
+Names = [('./training-images','./custom/train'), ('./test-images','./custom/test')]
+
+# Create save-to directory
+try:
+	os.makedirs('custom')
+except FileExistsError:
+	pass
 
 for name in Names:
 	rawImage = []
@@ -50,9 +56,12 @@ for name in Names:
 
 	labeldata = numpy.zeros(count, dtype=numpy.uint8)
 	for i in range(0, len(FileList)):
-		imagedata[i] = rawImage[i]
+		try:
+			imagedata[i] = rawImage[i]
+		except ValueError as err:
+			print(f"Check that '{FileList[i]}' isn't a grayscale image")
+			raise err
 		labeldata[i] = rawLabel[i]
-
 	write_imagedata(imagedata, name[1] + '-images-idx3-ubyte')
 	write_labeldata(labeldata, name[1] + '-labels-idx1-ubyte')
 

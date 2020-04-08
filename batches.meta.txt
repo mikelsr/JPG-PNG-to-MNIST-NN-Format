@@ -1,2 +1,6 @@
-dog
-cat
+alan_grant
+claire_dearing
+ellie_sattler
+ian_malcolm
+john_hammod
+owen_grady
