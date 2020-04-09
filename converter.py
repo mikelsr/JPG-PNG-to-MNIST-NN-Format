@@ -3,7 +3,7 @@ from random import shuffle
 
 WIDTH = 96
 HEIGHT = 96
-CHANNELS = 3
+CHANNELS = 1  # 3 for RGB
 
 def write_labeldata(labeldata, outputfile):
 	header = numpy.array([0x0801, len(labeldata)], dtype='>i4')
