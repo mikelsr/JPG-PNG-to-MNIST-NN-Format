@@ -1,8 +1,8 @@
 import numpy, imageio, os
 from random import shuffle
 
-WIDTH = 96
-HEIGHT = 96
+WIDTH = 28
+HEIGHT = 28
 CHANNELS = 1  # 3 for RGB
 
 def write_labeldata(labeldata, outputfile):
