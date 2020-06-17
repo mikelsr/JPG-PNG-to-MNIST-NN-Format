@@ -1,7 +1,7 @@
 #!/bin/bash
 
-height=96
-width=96
+height=28
+width=28
 
 if [ `ls test-images/*/*.jpg 2> /dev/null | wc -l ` -gt 0 ]; then
   for file in test-images/*/*.jpg; do
